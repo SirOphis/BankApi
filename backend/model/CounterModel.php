@@ -17,5 +17,18 @@ class CounterModel{
     public function getZipcode():int{
         return $this->zip_code;
     }
+    public function getCity():string{
+        return $this->city;
+    }
+    public function setBank(BankModel $bank):void{
+        $this->bank=$bank;
+    }
+    public function setAddress(string $address):void{
+        $this->address=$address;
+    }public function setZipcode(string $zip_code):void{
+        $this->zip_code=$zip_code;
+    }public function setCity(string $city):void{
+        $this->city=$city;
+    }
 }
 ?>

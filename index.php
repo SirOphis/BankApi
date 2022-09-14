@@ -10,6 +10,15 @@ spl_autoload_register(function ($class){
 });
 
 header("Content-type: application/json; charset=UTF-8");
+
+
+
+$parts = explode("/",$_SERVER["REQUEST_URI"]);
+
+// if(strtolower($parts[1]) != "bank" || $parts[1] == null ){
+//     http_response_code(404);
+//     exit;
+// }
 $user = new backend\model\UserModel("AD294981","BELFATMI Moussa",new \DateTime("11-12-2001",null),"moussa.belfatmi@hotmail.com","moussa123","this is the addresse of my home","RABAT",120020);
 $bank = new backend\model\BankModel(00001,"Attijari Wafabank","ATTSWIFT","Morocco");
 
@@ -20,14 +29,6 @@ $account = new backend\model\AccountModel("AC91308392ND",$user,$bank,"US",4994.5
 
 echo \json_encode($account->toArray());
 
-
-
-$parts = explode("/",$_SERVER["REQUEST_URI"]);
-
-// if(strtolower($parts[1]) != "bank" || $parts[1] == null ){
-//     http_response_code(404);
-//     exit;
-// }
 
 // echo \json_encode($account->toArray());
 
