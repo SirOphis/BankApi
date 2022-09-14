@@ -21,11 +21,11 @@ $parts = explode("/",$_SERVER["REQUEST_URI"]);
 // }
 $user = new backend\model\UserModel("AD294981","BELFATMI Moussa",new \DateTime("11-12-2001",null),"moussa.belfatmi@hotmail.com","moussa123","this is the addresse of my home","RABAT",120020);
 $bank = new backend\model\BankModel(00001,"Attijari Wafabank","ATTSWIFT","Morocco");
+$counter = new backend\model\CounterModel($bank,"addresse of the branch where the account is created",1202012,"City");
+// $userDao= new backend\database\UserDao($user);
+// $userDao->connect();
 
-$userDao= new backend\database\UserDao($user);
-$userDao->connect();
-
-$account = new backend\model\AccountModel("AC91308392ND",$user,$bank,"US",4994.55);
+$account = new backend\model\AccountModel("AC91308392ND",$user,$bank,$counter,"US",4994.55);
 
 echo \json_encode($account->toArray());
 

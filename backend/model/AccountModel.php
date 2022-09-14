@@ -6,7 +6,7 @@ class AccountModel{
     public function __construct(private string $account_number,
                                 private UserModel $owner,
                                 private BankModel $bank,
-                                private ?CounterModel $counter,
+                                private CounterModel $counter,
                                 private string $currency,
                                 private float $balance){}
     public function toArray():array{

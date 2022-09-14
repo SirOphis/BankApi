@@ -17,10 +17,10 @@ abstract class  Dao{
         }
     }
     abstract public function create():bool;
-    abstract public function update():bool;
-    abstract public function delete():bool;
+    //abstract public function update():bool;
+    //abstract public function delete():bool;
     //abstract public function fetch(int $id):bool;
-    abstract public function fetchAll():bool;
+    //abstract public function fetchAll():bool;
 
 }
 ?>
