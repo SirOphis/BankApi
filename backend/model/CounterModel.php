@@ -7,7 +7,9 @@ class CounterModel{
                                 private string $address,
                                 private int $zip_code,
                                 private string $city){}
-    
+    public function toArray():array{
+        return array("bank"=>$this->bank,"address"=>$this->address,"zip code"=>$this->zip_code,"city"=>$this->city);
+    }
     public function getBank():BankModel{
         return $this->bank;
     }
